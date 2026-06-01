@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Official academic portfolio of Dr. Rajesh Vemula – Assistant Professor at CHRIST University, Bengaluru. Researcher in Marketing, Consumer Behaviour, Distribution Channels, and Emerging Technologies.">
+<title>Dr. Rajesh Vemula | Academic Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --deep: #112240;
+    --ink: #1a2e4a;
+    --gold: #C9A84C;
+    --gold-light: #e8c97a;
+    --gold-pale: #f5e9c8;
+    --cream: #F8F4ED;
+    --white: #FDFCFA;
+    --muted: #8a9bb5;
+    --border: rgba(201,168,76,0.25);
+    --shadow: 0 4px 32px rgba(13,27,42,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+ 
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+ 
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(201,168,76,0.08) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 80% at 10% 80%, rgba(17,34,64,0.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 5rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.08;
+    margin-bottom: 0.4rem;
+  }
+  .hero-name em { font-style: italic; color: var(--gold-light); }
+  .hero-title {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 0.03em;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: rgba(248,244,237,0.7);
+    line-height: 1.5;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.75rem 1.8rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    padding: 0.75rem 1.8rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+ 
+  /* Card with monogram */
+  .hero-card {
+    background: linear-gradient(135deg, #162035 0%, #0e1a2e 100%);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .monogram {
+    width: 90px; height: 90px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--cream); margin-bottom: 0.3rem; }
+  .card-role { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .card-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .card-link {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgba(248,244,237,0.75);
+    font-size: 0.78rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .card-link:hover { border-color: var(--gold); color: var(--gold); }
+  .card-link-icon { width: 18px; text-align: center; font-size: 1rem; }
+ 
+  /* SECTIONS */
+  section { padding: 90px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+    color: var(--navy);
+  }
+  .section-title em { font-style: italic; color: var(--ink); }
+  .divider { width: 48px; height: 2px; background: var(--gold); margin-bottom: 2.5rem; }
+ 
+  /* ABOUT */
+  .about-section { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { color: var(--ink); margin-bottom: 1.1rem; font-size: 1.02rem; }
+  .about-text p:first-child { font-size: 1.12rem; font-weight: 400; }
+  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+  .highlight-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 3px;
+  }
+  .highlight-icon { font-size: 1.3rem; min-width: 28px; }
+  .highlight-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 2px; }
+  .highlight-val { font-size: 0.93rem; font-weight: 500; color: var(--navy); }
+ 
+  /* EXPERTISE */
+  .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .expertise-card {
+    padding: 1.8rem 1.5rem;
+    border: 1px solid rgba(13,27,42,0.1);
+    border-radius: 3px;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .expertise-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(201,168,76,0.1); transform: translateY(-3px); }
+  .expertise-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .expertise-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
+  .expertise-desc { font-size: 0.85rem; color: #556; line-height: 1.6; }
+ 
+  /* EXPERIENCE */
+  .experience-section { background: var(--navy); color: var(--cream); }
+  .experience-section .section-title { color: var(--cream); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 2.8rem; }
+  .timeline-dot {
+    position: absolute; left: -2rem; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translateX(-4.5px);
+  }
+  .timeline-year { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.3rem; }
+  .timeline-role { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--cream); margin-bottom: 0.2rem; }
+  .timeline-org { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.6rem; }
+  .timeline-desc { font-size: 0.87rem; color: rgba(248,244,237,0.65); line-height: 1.65; }
+  .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 2px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 5rem; }
+ 
+  /* PUBLICATIONS */
+  .pub-tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 1px solid rgba(13,27,42,0.12); }
+  .pub-tab {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s;
+    background: none; border-top: none; border-left: none; border-right: none;
+  }
+  .pub-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
+  .pub-list { display: none; }
+  .pub-list.active { display: flex; flex-direction: column; gap: 1rem; }
+  .pub-item {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(13,27,42,0.1);
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .pub-item:hover { border-color: var(--gold); }
+  .pub-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .badge-journal { background: #e8f4fd; color: #1565c0; }
+  .badge-chapter { background: #f3e8fd; color: #7b1fa2; }
+  .badge-conf { background: #e8fdf0; color: #1b5e20; }
+  .badge-abdc { background: #fff3e0; color: #e65100; }
+  .pub-title { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 0.25rem; line-height: 1.5; }
+  .pub-meta { font-size: 0.78rem; color: var(--muted); }
+  .pub-link {
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .pub-link:hover { text-decoration: underline; }
+  .pub-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; min-width: 80px; }
+ 
+  /* CONTACT */
+  .contact-section { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.1);
+    border-radius: 3px;
+    padding: 2rem;
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--gold); }
+  .contact-icon { font-size: 1.5rem; }
+  .contact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 0.3rem; font-weight: 600; }
+  .contact-val { font-size: 0.9rem; color: var(--navy); font-weight: 500; }
+  .contact-val a { color: var(--navy); text-decoration: none; }
+  .contact-val a:hover { color: var(--gold); }
+  .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .profiles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .profile-link {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 1rem 1.2rem;
+    background: var(--white);
+    border: 1px solid rgba(13,27,42,0.1);
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .profile-link:hover { border-color: var(--gold); color: var(--gold); }
+  .profile-link span { font-size: 1.1rem; }
+ 
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: var(--muted);
+    text-align: center;
+    padding: 2.5rem 5%;
+    font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+  footer strong { color: var(--gold); }
+ 
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-content > * { animation: fadeUp 0.7s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+  .hero-card { animation: fadeUp 0.8s 0.4s ease both; }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-grid, .about-grid, .exp-grid, .contact-grid { grid-template-columns: 1fr; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .hero-card { display: none; }
+    .hero-stats { gap: 2rem; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .expertise-grid { grid-template-columns: 1fr; }
+    .profiles-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 6%; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">📖 Dr. Rajesh Vemula</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Assistant Professor · CHRIST University, Bengaluru</div>
+      <h1 class="hero-name">Dr. Rajesh<br><em>Vemula</em></h1>
+      <p class="hero-title">Ph.D. · M.B.A. · M.Com · AP SET (Commerce & Management)</p>
+      <p class="hero-tagline">Bridging <em>Marketing Strategy</em>, <em>Consumer Behaviour</em> &amp; <em>Emerging Technologies</em> to shape the future of commerce.</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">14+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">250+</div>
+          <div class="stat-label">Students Placed</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#publications" class="btn-primary">View Publications</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+ 
+    <div class="hero-card">
+      <div class="monogram">RV</div>
+      <div class="card-name">Dr. Rajesh Vemula</div>
+      <div class="card-role">CHRIST University, Bengaluru</div>
+      <div class="card-links">
+        <a href="https://www.linkedin.com/in/dr-rajesh-vemula-90655893" target="_blank" class="card-link">
+          <span class="card-link-icon">🔗</span> LinkedIn Profile
+        </a>
+        <a href="https://scholar.google.com/citations?user=28jDBXAAAAAJ&hl=en" target="_blank" class="card-link">
+          <span class="card-link-icon">🎓</span> Google Scholar
+        </a>
+        <a href="https://orcid.org/0009-0004-3282-6453" target="_blank" class="card-link">
+          <span class="card-link-icon">🔬</span> ORCID: 0009-0004-3282-6453
+        </a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=59565558500" target="_blank" class="card-link">
+          <span class="card-link-icon">📊</span> Scopus ID: 59565558500
+        </a>
+        <a href="mailto:raz5020@gmail.com" class="card-link">
+          <span class="card-link-icon">✉️</span> raz5020@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">About <em>Me</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am an academician, researcher, and mentor with a deep commitment to uncovering the intersection of <strong>marketing strategy, technology, and human behaviour</strong> in evolving business landscapes.</p>
+        <p>Currently serving as <strong>Assistant Professor at CHRIST (Deemed to be University)</strong>, Bengaluru, I bring over 14 years of rich teaching experience spanning institutions across Andhra Pradesh and beyond, combined with industry-oriented research and placement expertise.</p>
+        <p>My doctoral research (Ph.D., GITAM Deemed University, 2022) focused on the <em>"Role of Distribution Channels in the Marketing of Handlooms in Andhra Pradesh"</em> — a field study bridging rural economies with contemporary marketing frameworks. I have since expanded into AI governance, digital marketing, fintech, sustainable consumption, and consumer analytics.</p>
+        <p>Beyond research, I have guided student entrepreneurs, led placement cells, coordinated Young Indians chapters, and actively mentored student cohorts through career and personal development.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">🎓</div>
+          <div>
+            <div class="highlight-label">Doctorate</div>
+            <div class="highlight-val">Ph.D. — GITAM Deemed University (2022)</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">📚</div>
+          <div>
+            <div class="highlight-label">Qualifications</div>
+            <div class="highlight-val">M.Com · M.B.A. · AP SET (Commerce & Management)</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🏛️</div>
+          <div>
+            <div class="highlight-label">Current Institution</div>
+            <div class="highlight-val">CHRIST University, Bengaluru (2024 – Present)</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">📍</div>
+          <div>
+            <div class="highlight-label">Location</div>
+            <div class="highlight-val">Bengaluru, Karnataka, India</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🌐</div>
+          <div>
+            <div class="highlight-label">Languages</div>
+            <div class="highlight-val">Telugu · English · Hindi</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🔗</div>
+          <div>
+            <div class="highlight-label">ORCID</div>
+            <div class="highlight-val"><a href="https://orcid.org/0009-0004-3282-6453" target="_blank" style="color:var(--gold);text-decoration:none;">0009-0004-3282-6453</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-inner">
+    <div class="section-label">What I Study</div>
+    <h2 class="section-title">Areas of <em>Expertise</em></h2>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">📱</div>
+        <div class="expertise-name">Digital & Social Media Marketing</div>
+        <div class="expertise-desc">Investigating influencer marketing, e-commerce services, and digital intelligence and their impact on consumer behaviour, purchase decisions, and retail performance.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🤖</div>
+        <div class="expertise-name">Artificial Intelligence in Business</div>
+        <div class="expertise-desc">Exploring AI governance in organizational decision-making, brain-computer interfaces for personalized marketing, and AI-driven sustainability in green and blue economies.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🛒</div>
+        <div class="expertise-name">Consumer Behaviour & Retail</div>
+        <div class="expertise-desc">Analysing consumer awareness of green marketing, FMCG buying behaviour, advertising impact, salesforce dynamics, and retail mix model testing and validation.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🧵</div>
+        <div class="expertise-name">Distribution Channels & Handlooms</div>
+        <div class="expertise-desc">PhD-level expertise in handloom marketing distribution channels, supply chain management, and the financial viability of handloom and handicraft sectors in India.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">💹</div>
+        <div class="expertise-name">Fintech & Financial Innovation</div>
+        <div class="expertise-desc">Studying customer acceptance of sustainable fintech innovation, digital wallet usage, and digital banking experience in the Indian market context.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🎓</div>
+        <div class="expertise-name">Organisational Learning & HRM</div>
+        <div class="expertise-desc">Researching the interplay of technology and organisational learning, virtual reality in HR recruitment, emotional intelligence in leadership, and teacher self-efficacy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold)">Journey</div>
+    <h2 class="section-title">Academic & Professional <em>Experience</em></h2>
+    <div class="exp-grid">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin-bottom:1.5rem;font-weight:400;">Teaching Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024 – Present</div>
+            <div class="timeline-role">Assistant Professor</div>
+            <div class="timeline-org">CHRIST University, Bengaluru</div>
+            <div class="timeline-desc">Teaching Marketing, Consumer Behaviour, and related management subjects. Contributing to interdisciplinary research and student mentoring.</div>
+            <div class="timeline-tags"><span class="tag">Marketing</span><span class="tag">Research</span><span class="tag">Mentoring</span></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2023 – 2024</div>
+            <div class="timeline-role">Assistant Professor</div>
+            <div class="timeline-org">Lovely Professional University</div>
+            <div class="timeline-desc">Delivered courses in marketing management, consumer behaviour, and digital marketing. Published in peer-reviewed international journals.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2015 – 2023</div>
+            <div class="timeline-role">Assistant Professor</div>
+            <div class="timeline-org">Gayatri Vidya Parishad College, Visakhapatnam</div>
+            <div class="timeline-desc">Long-term teaching and administrative contributions. Served as Class Mentor (60 students), Young Indians Faculty Coordinator, Training & Placement Officer (250+ placements), and Stratix Club Coordinator.</div>
+            <div class="timeline-tags"><span class="tag">Teaching</span><span class="tag">Placements</span><span class="tag">Mentoring</span></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2010 – 2013</div>
+            <div class="timeline-role">Assistant Professor</div>
+            <div class="timeline-org">Gonna College of IT & Management Studies, Visakhapatnam</div>
+            <div class="timeline-desc">Foundational teaching experience in management and commerce subjects.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin-bottom:1.5rem;font-weight:400;">Research & Administrative Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2014 – 2015</div>
+            <div class="timeline-role">Project Fellow (UGC Major Research Project)</div>
+            <div class="timeline-org">GITAM Institute of Management, GITAM University</div>
+            <div class="timeline-desc">Worked under PI Dr. Rajeshwari Panigrahi on the project <em>"Role of Distribution Channels in the Financial Viability of Handlooms and Handicrafts Sector"</em> sanctioned by the University Grants Commission (UGC).</div>
+            <div class="timeline-tags"><span class="tag">UGC Project</span><span class="tag">Handlooms</span><span class="tag">Research</span></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2022 – 2023</div>
+            <div class="timeline-role">Training & Placement Officer</div>
+            <div class="timeline-org">Gayatri Vidya Parishad College, Visakhapatnam</div>
+            <div class="timeline-desc">Successfully placed 250+ students. Designed industry-oriented training programs, executed job-prospect enhancement initiatives, and managed end-to-end placement activities.</div>
+            <div class="timeline-tags"><span class="tag">Placements</span><span class="tag">Industry Connect</span></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016 – 2023</div>
+            <div class="timeline-role">Young Indians Faculty Coordinator</div>
+            <div class="timeline-org">Gayatri Vidya Parishad College, Visakhapatnam</div>
+            <div class="timeline-desc">Organised guest lectures, workshops, and industry interactions for BBA and MBA students, fostering leadership and entrepreneurial thinking.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">Ongoing</div>
+            <div class="timeline-role">E-Cell Faculty Coordinator</div>
+            <div class="timeline-org">CHRIST University, Bengaluru</div>
+            <div class="timeline-desc">Guiding student entrepreneurs in ideation, business model development, and startup validation. Organising EDPs, pitch competitions, and startup bootcamps.</div>
+            <div class="timeline-tags"><span class="tag">Entrepreneurship</span><span class="tag">Startups</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-label">Scholarly Work</div>
+    <h2 class="section-title">Selected <em>Publications</em></h2>
+    <div class="pub-tabs">
+      <button class="pub-tab active" onclick="switchTab('journals')">Journal Papers</button>
+      <button class="pub-tab" onclick="switchTab('chapters')">Book Chapters</button>
+      <button class="pub-tab" onclick="switchTab('conferences')">Conference Papers</button>
+    </div>
+ 
+    <!-- JOURNALS -->
+    <div class="pub-list active" id="tab-journals">
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Artificial Intelligence (AI) Governance in Organizational Decision-Making: Balancing Autonomy, Accountability and Transparency</div>
+          <div class="pub-meta">Journal of Entrepreneurship and Public Policy · Emerald · 2025</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://www.emerald.com/jepp/article/doi/10.1108/JEPP-04-2025-0112/1317337/Artificial-intelligence-AI-governance-in" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Exploring the Impact of Influencer Marketing Strategies on Sustainability in the Fashion Industry</div>
+          <div class="pub-meta">International Journal of Management and Enterprise Development · DOI: 10.1504/IJMED.2025.148966 · Vol. 24, Issue 4 (2025), pp. 367–389</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://www.inderscienceonline.com/doi/abs/10.1504/IJMED.2025.148966" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">The Interplay of Technology and Organizational Learning</div>
+          <div class="pub-meta">International Journal of Central Banking · Vol. 20, No. 1 · January 2024</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://ijocb.org/article-2024/143.html" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Application of Maslow Need Hierarchy Theory to Retail Salesforce Post COVID-19</div>
+          <div class="pub-meta">World Journal of Management and Economics · Vol. 16, Issue 5 · May 2023</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://wesro.org/volume-16-issue-05/" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Customer Expectations towards Retail Mix: Model Testing and Validation W.R.T. FMCG Retailing</div>
+          <div class="pub-meta">Korea Review of International Studies (ABDC Journal) · Vol. 16, Issue 45, pp. 13–19 · April 2023 · ISSN 1226-4741</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-abdc">ABDC</span>
+          <a class="pub-link" href="https://kristudies.org/volume-16-issue-45-april-2023/" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Towards the Self-Efficacy of Teachers in Education Sector: A Review of the Literature</div>
+          <div class="pub-meta">Central European Management Journal · Vol. 30, Issue 4, pp. 2154–2160 · 2022 · DOI: 10.57030/23364890.cemj.30.4.223</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://doi.org/10.57030/23364890.cemj.30.4.223" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">A Study on E-Commerce Services Influencing Purchasing Decision: Evidence from Visakhapatnam City</div>
+          <div class="pub-meta">Manager – The British Journal of Administrative Management (ABDC Journal) · ISSN 1746-1278 · Vol. 58, Issue 150 · May 2022</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-abdc">ABDC</span>
+          <a class="pub-link" href="https://tbjam.org/vol58-issue-150/" target="_blank">View →</a>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Supply Chain Management in Indian Dairy Industry: A Case Study of PMPCL, Ongole</div>
+          <div class="pub-meta">The Manager – British Journal of Administrative Management (ABDC) · ISSN 1746-1278 · Vol. 58, Issue 151 · May 2022</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-abdc">ABDC</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">A Study on Impact of Advertising on Consumer Buying Behaviour with reference to selected FMCG</div>
+          <div class="pub-meta">Journal of Contemporary Issues in Business and Government · Vol. 28, No. 04 · 2022 · DOI: 10.47750/cibg.2022.28.04.069</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">A Study on Salesforce Attrition in Retail Sector</div>
+          <div class="pub-meta">IOSR Journal of Business and Management · Vol. 23, Issue 6, Ser. I, pp. 62–64 · June 2021</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-journal">Journal</span>
+          <a class="pub-link" href="https://www.iosrjournals.org/iosr-jbm/pages/23(6)Series-1.html" target="_blank">View →</a>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- CHAPTERS -->
+    <div class="pub-list" id="tab-chapters">
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Utilizing Brain-Computer Interfaces for Personalized Marketing Strategies</div>
+          <div class="pub-meta">Brain-Computer Interfaces and Applications in Business · IGI Global · DOI: 10.4018/979-8-3373-5122-3.ch016 · 2025 · pp. 265–280</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+          <div style="font-size:0.72rem;color:var(--muted);">2025</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Customer Acceptance of Sustainable Fintech Innovation: A Study from an Indian Customer Perspective</div>
+          <div class="pub-meta">Financial Innovation for Global Sustainability · Wiley · DOI: 10.1002/9781394311682.ch14 · 2025 · pp. 337–357</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+          <div style="font-size:0.72rem;color:var(--muted);">2025</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Skillful Leadership and Management: The Importance of Emotional Intelligence</div>
+          <div class="pub-meta">Recent Trends in Engineering and Science for Resource Optimization · CRC Press · DOI: 10.1201/9781003596721-86 · 2025 · pp. 404–408</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">A Deep Understanding of Virtual Reality's Role in Human Resource Management, with Focus on Recruitment</div>
+          <div class="pub-meta">The Future of HRM in a World of Persistent Virtual Reality · Emerald · DOI: 10.1108/978-1-83662-110-220251004 · 2025 · pp. 87–107</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Leveraging AI and Digital Solutions to Enhance Sustainability in Green and Blue Economies</div>
+          <div class="pub-meta">AI and Digital Nomads Shaping Global Industrial Technology Transitions · IGI Global · DOI: 10.4018/979-8-3373-0159-4.ch002 · 2025 · pp. 53–84</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Analysis of Social Media Marketing Impact on Consumer Behaviour</div>
+          <div class="pub-meta">Recent Advances in Management and Engineering · Taylor & Francis / CRC Press · ISBN 9781032873183</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-chapter">Book Chapter</span>
+          <a class="pub-link" href="https://www.routledge.com/Recent-Advances-in-Management-and-Engineering-Proceedings-ofRecent-Advances-in-Management-and-Engineering/Paweloszek-Jelonek-Sabharwal-Kumar-Raya/p/book/9781032873183" target="_blank">View →</a>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- CONFERENCES -->
+    <div class="pub-list" id="tab-conferences">
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Measuring Customer Perception on Promotion of Tourism Destinations using AR and VR Applications: Model Testing and Validation</div>
+          <div class="pub-meta">FICTA-2024 · AI & Data Science Research Group, London Metropolitan University, UK · Published in Springer</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-conf">Conference</span>
+          <div style="font-size:0.72rem;color:var(--muted);">2024 · Springer</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">Impact of Digital Wallets Usage on Digital Banking Experience</div>
+          <div class="pub-meta">Smart Innovation, Systems & Technologies (Springer Scopus) · Vol. 422 (2025), pp. 603–615</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-conf">Conference</span>
+          <div style="font-size:0.72rem;color:var(--muted);">2025 · Scopus</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">The Power of Perception: How Sustainability Drives Consumer Brand Preferences</div>
+          <div class="pub-meta">International Conference on Navigating the Future of Management with Technology and Sustainability (ICMP2K25) · Vignan University, Guntur · March 7–8, 2025</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-conf">Conference</span>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div>
+          <div class="pub-title">A Study on Customer Perception towards Electric Vehicles</div>
+          <div class="pub-meta">International Conference on Management and Entrepreneurial Challenges in Dynamic Business Environment · Centurion University, Vizianagaram · March 25–26, 2022</div>
+        </div>
+        <div class="pub-right">
+          <span class="pub-badge badge-conf">Conference</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-icon">🏛️</div>
+          <div>
+            <div class="contact-label">Institution</div>
+            <div class="contact-val">CHRIST (Deemed to be University)<br>School of Business & Management<br>Bengaluru, Karnataka, India</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">
+              <a href="mailto:raz5020@gmail.com">raz5020@gmail.com</a><br>
+              <a href="mailto:rajeshvemulasree@gmail.com">rajeshvemulasree@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Mobile</div>
+            <div class="contact-val">
+              <a href="tel:+917675977148">+91 7675 977 148</a><br>
+              <a href="tel:+919966077148">+91 9966 077 148</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📚</div>
+          <div>
+            <div class="contact-label">Collaboration</div>
+            <div class="contact-val" style="font-size:0.87rem;">Open to research collaborations, joint publications, conference presentations, and academic partnerships.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:1.2rem;font-weight:500;">Academic Profiles</h3>
+        <div class="profiles-grid">
+          <a href="https://www.linkedin.com/in/dr-rajesh-vemula-90655893" target="_blank" class="profile-link">
+            <span>🔗</span> LinkedIn
+          </a>
+          <a href="https://scholar.google.com/citations?user=28jDBXAAAAAJ&hl=en" target="_blank" class="profile-link">
+            <span>🎓</span> Google Scholar
+          </a>
+          <a href="https://orcid.org/0009-0004-3282-6453" target="_blank" class="profile-link">
+            <span>🔬</span> ORCID
+          </a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=59565558500" target="_blank" class="profile-link">
+            <span>📊</span> Scopus
+          </a>
+        </div>
+        <div style="margin-top:1.5rem;padding:1.5rem;background:var(--white);border:1px solid rgba(13,27,42,0.1);border-radius:3px;">
+          <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:0.8rem;font-weight:600;">Researcher IDs</div>
+          <div style="font-size:0.88rem;color:var(--navy);display:flex;flex-direction:column;gap:0.4rem;">
+            <div><strong style="color:var(--muted);font-weight:500;">ORCID:</strong> <a href="https://orcid.org/0009-0004-3282-6453" target="_blank" style="color:var(--gold);text-decoration:none;">0009-0004-3282-6453</a></div>
+            <div><strong style="color:var(--muted);font-weight:500;">Scopus ID:</strong> <a href="https://www.scopus.com/authid/detail.uri?authorId=59565558500" target="_blank" style="color:var(--gold);text-decoration:none;">59565558500</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <strong>Dr. Rajesh Vemula</strong> · Assistant Professor, CHRIST University, Bengaluru ·
+  <a href="mailto:raz5020@gmail.com" style="color:var(--gold);text-decoration:none;">raz5020@gmail.com</a>
+</footer>
+ 
+<script>
+  function switchTab(id) {
+    document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.pub-list').forEach(l => l.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+ 
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+ 
+  document.querySelectorAll('.expertise-card, .timeline-item, .pub-item, .contact-card, .profile-link').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
